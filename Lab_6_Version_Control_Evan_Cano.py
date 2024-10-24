@@ -7,6 +7,15 @@ def encode(string_input):
         j+=1
     return str(output)
 
+def decode(string_input):
+    output = 0
+    pwr = pow(10, len(string_input))
+    for i in string_input:
+        a = (int(i) - 3) % 10
+        output += (a * pwr)
+        pwr /= 10
+    return str(output)
+
 
 if __name__ == '__main__':
     encoded_password = ""
