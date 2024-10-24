@@ -9,11 +9,11 @@ def encode(string_input):
 
 def decode(string_input):
     output = 0
-    pwr = pow(10, len(string_input))
+    pwr = pow(10, len(string_input) - 1)
     for i in string_input:
         a = (int(i) - 3) % 10
         output += (a * pwr)
-        pwr /= 10
+        pwr //= 10
     return str(output)
 
 
@@ -33,9 +33,8 @@ if __name__ == '__main__':
             print("Your password has been encoded and stored!\n")
 
         elif option == 2:
-            print(f"The encoded password is {encoded_password}, and the original password is {decoder(encoded_password)}.\n")
+            print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.\n")
 
         elif option == 3:
             break
-
 
